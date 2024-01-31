@@ -1,7 +1,10 @@
 #include <iostream>
+
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
+
+#include "objects/Particle.cpp"
 
 int main() 
 {

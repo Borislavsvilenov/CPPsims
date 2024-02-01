@@ -1,21 +1,19 @@
 #include <iostream>
-#include <vector>
 
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 
-std::vector<Particle> particles;
-
 class Particle
 {
 private:
+
+public:
     sf::Vector2f posC;
     sf::Vector2f posL;
     sf::Vector2f accel;
-    sf::CircleShape sprite;
     sf::Vector2f vel;
+    sf::CircleShape sprite;
 
-public:
     Particle(float x, float y, float Vx, float Vy, int rad) : posC(x, y), posL(x - Vx, y - Vy), accel(0.0, 0.1)
     {
         sprite.setRadius(rad);
@@ -30,10 +28,13 @@ public:
         posC += vel + accel * dt * dt;
     }
 
+    void bounds(int radius)
+    {
+       
+    }
+
     void draw()
     {
         sprite.setPosition(posC);
     }
 };
-
-

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
 
@@ -32,6 +33,14 @@ int main()
                 break;
             }
         }
+
+        window.clear(sf::Color::Black);
+
+        deltaTime = clock.restart();
+        //Render Here
+        
+
+        window.display();
     }
 
 

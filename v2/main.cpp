@@ -17,7 +17,7 @@ int main()
     sf::Clock clock;
     sf::Time deltaTime;
 
-    particles.push_back(Particle(400.0, 400.0, 0.0, 0.0, 10));
+    particles.push_back(Particle(400.0, 400.0, 0.0, 0.0, 20));
 
     while(window.isOpen())
     {

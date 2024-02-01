@@ -11,7 +11,7 @@ int main()
 {   
     std::vector<Particle> particles;
 
-    sf::RenderWindow window(sf::VideoMode(800, 800), "empty window", sf::Style::Titlebar | sf::Style::Close);
+    sf::RenderWindow window(sf::VideoMode(800, 800), "SIM AREA", sf::Style::Titlebar | sf::Style::Close);
     sf::Event ev;
 
     sf::Clock clock;

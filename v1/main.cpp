@@ -7,20 +7,23 @@
 
 #include "objects/Particle.cpp"
 
-float deltaTime;
-
-
 int main() 
-{
-    deltaTime = 0.01;
-    
+{    
     std::vector<Particle> particles;
-
+    float Brad = 300;
+    sf::Vector2f Bctr(400.0, 400.0);
+    sf::CircleShape bounds;
+    bounds.setRadius(Brad);
+    bounds.setFillColor(sf::Color::Black);
+    bounds.setPosition(Bctr.x - Brad, Bctr.y - Brad);
 
     sf::RenderWindow window(sf::VideoMode(800, 800), "empty window", sf::Style::Titlebar | sf::Style::Close);
     sf::Event ev;
 
-    particles.push_back(Particle(100.0, 100.0, 0.1, 0.0, 20.0));
+    sf::Clock clock;
+    sf::Time deltaTime;
+
+    particles.push_back(Particle(300.0, 300.0, 0.0, 0.01, 20.0));
 
     while (window.isOpen()) 
     {
@@ -46,10 +49,15 @@ int main()
         //renderer
         window.clear(sf::Color::White); //clear frame
 
+        deltaTime = clock.restart();
+
+        window.draw(bounds);
+
         //render HERE & game code
         for (int point = 0; point < particles.size(); point++)
-        {
-            particles[point].update(deltaTime);
+        {   
+            particles[point].bounds(Brad, Bctr);
+            particles[point].update(deltaTime.asSeconds() / 200);
             particles[point].draw();
             window.draw(particles[point].sprite);
         }

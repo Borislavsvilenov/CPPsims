@@ -17,7 +17,7 @@ int main()
     sf::Clock clock;
     sf::Time deltaTime;
 
-    particles.push_back(Particle(400.0f, 400.0f, 0.0f, 0.0f, 20));
+    particles.push_back(Particle(400.0f, 400.0f, 0.0f, -100.0f, 20));
 
     while(window.isOpen())
     {
@@ -46,6 +46,7 @@ int main()
         //Render Here
         for(int point = 0; point < particles.size(); point++)
         {
+            particles[point].bounds(800.0, 800.0);
             particles[point].draw();
             particles[point].update(deltaTime.asSeconds());
             window.draw(particles[point].sprite);

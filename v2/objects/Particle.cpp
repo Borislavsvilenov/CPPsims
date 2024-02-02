@@ -16,7 +16,7 @@ public:
     sf::CircleShape sprite;
     int radius;
 
-    Particle(float x, float y, float dx, float dy, int rad) : pos(x, y), posL(x - dx, y - dy), vel(dx, dy), accel(0.0, 10.0)
+    Particle(float x, float y, float dx, float dy, int rad) : pos(x, y), posL(x - dx, y - dy), vel(dx, dy), accel(0.0, 100.0)
     {
         radius = rad;
         sprite.setRadius(rad);
@@ -33,9 +33,26 @@ public:
         pos += vel * dt;
     }
 
-    void bounds(int ctr, int width, int heigth)
+    void bounds(float width, float heigth)
     {
-
+        if(pos.x > width - radius)
+        {
+            pos.x = width - radius;
+            vel.x *= - 0.3f;
+        } else if(pos.x < 0 + radius)
+        {
+            pos.x = 0 + radius;
+            vel.x *= - 0.3f;
+        }
+        if(pos.y > heigth - radius)
+        {
+            pos.y = heigth -radius;
+            vel.y *= - 0.3f;
+        } else if(pos.y < 0 + radius)
+        {
+            pos.y = 0 + radius;
+            vel.y *= - 0.3f;
+        }
     }
 
     void draw()

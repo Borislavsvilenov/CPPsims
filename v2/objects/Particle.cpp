@@ -24,6 +24,20 @@ public:
         sprite.setPosition(x - rad, y - rad);
     }
 
+    void update(float dt)
+    {
+        vel += accel * dt;
+
+        posL = pos;
+
+        pos += vel * dt;
+    }
+
+    void bounds(int ctr, int width, int heigth)
+    {
+
+    }
+
     void draw()
     {
         sprite.setPosition(pos.x - radius, pos.y - radius);

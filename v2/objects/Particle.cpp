@@ -16,7 +16,7 @@ public:
     sf::CircleShape sprite;
     int radius;
 
-    Particle(float x, float y, float dx, float dy, int rad) : pos(x, y), posL(x - dx, y - dy), vel(dx, dy), accel(0.0, 100.0)
+    Particle(float x, float y, float dx, float dy, int rad) : pos(x, y), posL(dx, dy), vel(dx, dy), accel(0.0f, 1000.0f)
     {
         radius = rad;
         sprite.setRadius(rad);
@@ -26,11 +26,44 @@ public:
 
     void update(float dt)
     {
-        vel += accel * dt;
+        vel = pos - posL;
 
         posL = pos;
 
-        pos += vel * dt;
+        pos = pos + vel + (accel * dt * dt);
+    }
+
+    void collide(Particle &p2, float d)
+    {
+        if(d != 0)
+        {
+            float overlap = (radius + p2.radius - d) / 2;
+            sf::Vector2f normal = (pos - p2.pos) / d;
+
+            pos += normal * overlap;
+            p2.pos -= normal * overlap;
+        }
+    }
+
+    void checkCollision(std::vector<Particle> &particles, int sstep)
+    {
+        for(int step = 0; step < sstep; step++)
+        {
+            for(int i = 0; i < particles.size(); i++)
+            {
+                Particle &p2 = particles[i];
+                sf::Vector2f diff = pos - p2.pos;
+                float d = std::sqrt(diff.x * diff.x + diff.y * diff.y);
+
+                if(&p2 != this)
+                {
+                    if(d < radius + p2.radius)
+                    {
+                        collide(p2, d);
+                    }
+                }
+            }
+        }
     }
 
     void bounds(float width, float heigth)
@@ -38,20 +71,16 @@ public:
         if(pos.x > width - radius)
         {
             pos.x = width - radius;
-            vel.x *= - 0.3f;
         } else if(pos.x < 0 + radius)
         {
             pos.x = 0 + radius;
-            vel.x *= - 0.3f;
         }
         if(pos.y > heigth - radius)
         {
             pos.y = heigth -radius;
-            vel.y *= - 0.3f;
         } else if(pos.y < 0 + radius)
         {
             pos.y = 0 + radius;
-            vel.y *= - 0.3f;
         }
     }
 

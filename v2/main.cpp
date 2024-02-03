@@ -6,12 +6,12 @@
 
 #include "objects/Particle.cpp"
 
-
 int main()
 {   
     std::vector<Particle> particles;
 
-    sf::RenderWindow window(sf::VideoMode(800, 800), "SIM AREA", sf::Style::Titlebar | sf::Style::Close);
+    sf::RenderWindow window(sf::VideoMode(400, 800), "SIM AREA", sf::Style::Titlebar | sf::Style::Close);
+    window.setFramerateLimit(60);
     sf::Event ev;
 
     sf::Clock clock;
@@ -19,6 +19,7 @@ int main()
 
     int frameCounter = 0;
     int substeps = 1;
+    float dt = 0.01;
 
     while(window.isOpen())
     {
@@ -47,15 +48,16 @@ int main()
         //Render Here
         for(int point = 0; point < particles.size(); point++)
         {   
-            particles[point].update(deltaTime.asSeconds());
+            //particles[point].update(deltaTime.asSeconds() / 1);
+            particles[point].update(dt);
             particles[point].checkCollision(particles, substeps);
-            particles[point].bounds(800.0f, 800.0f);
+            particles[point].bounds(400.0f, 800.0f);
             particles[point].draw();
             window.draw(particles[point].sprite);
         }
-        if(frameCounter % 10 == 0)
+        if(frameCounter % 2 == 0)
         {
-            particles.push_back(Particle(100.0f, 200.0f, 99.2f, 200.0f, 10));
+            particles.push_back(Particle(100.0f, 200.0f, 99.2f, 200.0f, 5));
         }
 
         frameCounter++;

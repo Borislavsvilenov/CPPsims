@@ -5,6 +5,9 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
+#include "objects/applyPhysics.cpp"
+#include "objects/shapes.cpp"
+
 int main () {
     sf::RenderWindow window(sf::VideoMode(800, 800), "SIM AREA", sf::Style::Titlebar | sf::Style::Close);
     window.setFramerateLimit(60);
@@ -33,7 +36,7 @@ int main () {
 
         window.clear(sf::Color::Black);
 
-        
+
 
         window.display();
     }

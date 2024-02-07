@@ -41,11 +41,9 @@ public:
 class Circle {
 public:
     sf::Vector2f pos;
-    sf::Vector2f vel;
-    sf::Vector2f accel;
     float r;
 
-    Circle(float x, float y, float vx, float vy, float ax, float ay, float w, float h, float rad) : pos(x, y), vel(vx, vy), accel(ax, ay)
+    Circle(float x, float y, float w, float h, float rad) : pos(x, y)
     {
         r = rad;
     }

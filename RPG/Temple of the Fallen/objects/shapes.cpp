@@ -21,13 +21,13 @@ public:
         pos = Apos;
     }
 
-    bool overlapsRect(Rect obj) {
+    bool overlapsRect(Rect &obj) {
         bool horizontalOverlap = (pos.x < obj.pos.x + obj.size.x) && (pos.x + size.x > obj.size.x);
         bool verticalOverlap = (pos.y < obj.pos.y + obj.size.y) && (pos.y + size.y > obj.size.y);
         return horizontalOverlap &&verticalOverlap;
     }
 
-    bool overlapsCircle(Circle obj) {
+    bool overlapsCircle(Circle &obj) {
         float closestX = std::max(pos.x, std::min(obj.pos.x, pos.x + size.x));
         float closestY = std::max(pos.y, std::min(obj.pos.y, pos.y + size.y));
 
@@ -54,7 +54,7 @@ public:
         pos = Apos;
     }
 
-    bool overlapsRect(Rect obj) {
+    bool overlapsRect(Rect &obj) {
         float closestX = std::max(obj.pos.x, std::min(pos.x, obj.pos.x + obj.size.x));
         float closestY = std::max(obj.pos.y, std::min(pos.y, obj.pos.y + obj.size.y));
 
@@ -64,7 +64,7 @@ public:
         return (dx * dx + dy * dy) <= (r * r);
     }
 
-    bool overlapsCircle(Circle obj) {
+    bool overlapsCircle(Circle &obj) {
         sf::Vector2f toObj = pos - obj.pos;
 
         float d = std::sqrt(toObj.x * toObj.x + toObj.y * toObj.y);

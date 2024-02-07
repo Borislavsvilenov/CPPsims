@@ -6,7 +6,8 @@
 #include <SFML/Window.hpp>
 
 #include "objects/applyPhysics.cpp"
-#include "objects/shapes.cpp"
+#include "objects/headers/Circle.hpp"
+#include "objects/headers/Rect.hpp"
 
 int main () {
     sf::RenderWindow window(sf::VideoMode(800, 800), "SIM AREA", sf::Style::Titlebar | sf::Style::Close);

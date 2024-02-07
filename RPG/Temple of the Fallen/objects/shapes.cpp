@@ -1,11 +1,27 @@
+#pragma once
 #include <iostream>
 #include <vector>
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
-class Rect {
+class Rect;
 
+class Circle {
+public:
+    sf::Vector2f pos;
+    float r;
+
+    Circle(float x, float y, float rad) : pos(x, y), r(rad) {}
+
+    void moveTo(sf::Vector2f Apos) {
+        pos = Apos;
+    }
+
+    bool overlapsRect(Rect &obj);
+    bool overlapsCircle(Circle &obj);
+};
+class Rect {
 public:
     sf::Vector2f pos;
     sf::Vector2f vel;
@@ -38,35 +54,20 @@ public:
     }
 };
 
-class Circle {
-public:
-    sf::Vector2f pos;
-    float r;
+bool Circle::overlapsRect(Rect &obj) {
+    float closestX = std::max(obj.pos.x, std::min(pos.x, obj.pos.x + obj.size.x));
+    float closestY = std::max(obj.pos.y, std::min(pos.y, obj.pos.y + obj.size.y));
 
-    Circle(float x, float y, float w, float h, float rad) : pos(x, y)
-    {
-        r = rad;
-    }
+    float dx = pos.x - closestX;
+    float dy = pos.y - closestY;
 
-    void moveTo(sf::Vector2f Apos) {
-        pos = Apos;
-    }
+    return (dx * dx + dy * dy) <= (r * r);
+}
 
-    bool overlapsRect(Rect &obj) {
-        float closestX = std::max(obj.pos.x, std::min(pos.x, obj.pos.x + obj.size.x));
-        float closestY = std::max(obj.pos.y, std::min(pos.y, obj.pos.y + obj.size.y));
+bool Circle::overlapsCircle(Circle &obj) {
+    sf::Vector2f toObj = pos - obj.pos;
 
-        float dx = pos.x - closestX;
-        float dy = pos.y - closestY;
+    float d = std::sqrt(toObj.x * toObj.x + toObj.y * toObj.y);
 
-        return (dx * dx + dy * dy) <= (r * r);
-    }
-
-    bool overlapsCircle(Circle &obj) {
-        sf::Vector2f toObj = pos - obj.pos;
-
-        float d = std::sqrt(toObj.x * toObj.x + toObj.y * toObj.y);
-
-        return d <= r + obj.r;
-    }
-};
+    return d <= r + obj.r;
+}

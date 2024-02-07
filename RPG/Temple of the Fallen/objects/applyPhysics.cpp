@@ -1,10 +1,12 @@
+#pragma once
 #include <iostream>
 #include <vector>
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
-#include "shapes.cpp"
+#include "headers/Circle.hpp"
+#include "headers/Rect.hpp"
 
 class PhysicsRect {
 private:

@@ -50,6 +50,10 @@ public:
         r = rad;
     }
 
+    void moveTo(sf::Vector2f Apos) {
+        pos = Apos;
+    }
+
     bool overlapsRect(Rect obj) {
         float closestX = std::max(obj.pos.x, std::min(pos.x, obj.pos.x + obj.size.x));
         float closestY = std::max(obj.pos.y, std::min(pos.y, obj.pos.y + obj.size.y));

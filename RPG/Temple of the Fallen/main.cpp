@@ -34,8 +34,8 @@ int main () {
         window.clear(sf::Color::Black);
 
 
-        window.display();
 
+        window.display();
     }
 
     return 0;

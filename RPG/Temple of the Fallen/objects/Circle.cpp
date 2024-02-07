@@ -1,7 +1,8 @@
 #include "headers/Circle.hpp"
-#include "headers/Rect.hpp"
 
-Circle::Circle(float x, float y, float rad) : pos(x, y), r(rad) {}
+Circle::Circle(float x, float y, float rad) 
+       : pos(x, y), 
+         r(rad) {}
 
 void Circle::moveTo(sf::Vector2f Apos) {
     pos = Apos;

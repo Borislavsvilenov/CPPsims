@@ -2,6 +2,8 @@
 #include <SFML/Graphics.hpp>
 #include "Rect.hpp"
 
+class Rect;
+
 class Circle {
 public:
     sf::Vector2f pos;

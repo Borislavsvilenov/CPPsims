@@ -1,8 +1,8 @@
 #include "Rect.hpp"
-#include "Circle.hpp"
 
-Rect::Rect(float x, float y, float vx, float vy, float ax, float ay, float w, float h)
-    : pos(x, y), vel(vx, vy), accel(ax, ay), size(w, h) {}
+Rect::Rect(float x, float y, float w, float h)
+     : pos(x, y), 
+       size(w, h) {}
 
 void Rect::moveTo(sf::Vector2f Apos) {
     pos = Apos;

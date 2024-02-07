@@ -5,7 +5,7 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
-#include "objects/applyPhysics.cpp"
+#include "objects/headers/PhysicsRect.hpp"
 #include "objects/headers/Circle.hpp"
 #include "objects/headers/Rect.hpp"
 

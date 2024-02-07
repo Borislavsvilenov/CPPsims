@@ -1,9 +1,3 @@
-#include <iostream>
-#include <vector>
-#include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-
 #include "headers/PhysicsRect.hpp"
 
 

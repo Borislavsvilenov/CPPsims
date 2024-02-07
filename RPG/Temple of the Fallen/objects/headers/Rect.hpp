@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "Circle.hpp"
 
-class Circle; // Forward declaration
+class Circle;
 
 class Rect {
 public:

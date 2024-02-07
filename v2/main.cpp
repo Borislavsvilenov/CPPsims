@@ -10,7 +10,7 @@ int main()
 {   
     std::vector<Particle> particles;
 
-    sf::RenderWindow window(sf::VideoMode(400, 800), "SIM AREA", sf::Style::Titlebar | sf::Style::Close);
+    sf::RenderWindow window(sf::VideoMode(800, 800), "SIM AREA", sf::Style::Titlebar | sf::Style::Close);
     window.setFramerateLimit(60);
     sf::Event ev;
 
@@ -51,7 +51,7 @@ int main()
             //particles[point].update(deltaTime.asSeconds() / 1);
             particles[point].update(dt);
             particles[point].checkCollision(particles, substeps);
-            particles[point].bounds(400.0f, 800.0f);
+            particles[point].bounds(800.0f, 800.0f);
             particles[point].draw();
             window.draw(particles[point].sprite);
         }

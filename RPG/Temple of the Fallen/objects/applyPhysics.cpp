@@ -7,28 +7,39 @@
 #include "shapes.cpp"
 
 class PhysicsRect {
-public:
+private:
+    Rect& parent;
     sf::Vector2f vel;
     sf::Vector2f accel;
 
     bool collision;
-    std::string grav;
+    bool movable;
+    int grav;
 
-    PhysicsRect(Rect &father, bool collisionType, std::string gravType, float vx, float vy, float ax, float ay) : vel(vx, vy), accel(ax, ay)
+public:
+    PhysicsRect(Rect &father, bool collisionType, bool move, int gravType, float vx, float vy, float ax, float ay) 
+        : parent(father), 
+          vel(vx, vy), 
+          accel(ax, ay),
+          collision(collisionType),
+          movable(move),
+          grav(gravType)
     {
-        Rect parent = father;
 
-        collision = collisionType;
-        grav = gravType;
     }
 
     void update(float dt) {
-        if (grav == "down") {
-            accel.y = 1000.0f;
+        if (grav == 1) {
+            accel.y += 1000.0f;
         }
 
         if (collision == true) {
 
+        }
+
+        if (movable == true) {
+            vel += accel * dt;
+            parent.pos += vel * dt;
         }
     }
 };

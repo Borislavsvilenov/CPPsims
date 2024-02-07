@@ -52,11 +52,10 @@ public:
             for(int i = 0; i < particles.size(); i++)
             {
                 Particle &p2 = particles[i];
-                sf::Vector2f diff = pos - p2.pos;
-                float d = std::sqrt(diff.x * diff.x + diff.y * diff.y);
-
                 if(&p2 != this)
                 {
+                    sf::Vector2f diff = pos - p2.pos;
+                    float d = std::sqrt(diff.x * diff.x + diff.y * diff.y);
                     if(d < radius + p2.radius)
                     {
                         collide(p2, d);

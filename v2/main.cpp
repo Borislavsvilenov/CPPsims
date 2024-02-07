@@ -18,8 +18,8 @@ int main()
     sf::Time deltaTime;
 
     int frameCounter = 0;
-    int substeps = 1;
-    float dt = 0.01;
+    const int substeps = 2;
+    const float dt = 0.01;
 
     while(window.isOpen())
     {
@@ -57,7 +57,7 @@ int main()
         }
         if(frameCounter % 2 == 0)
         {
-            particles.push_back(Particle(100.0f, 200.0f, 99.2f, 200.0f, 5));
+            particles.push_back(Particle(100.0f, 200.0f, 99.2f, 200.0f, 10));
         }
 
         frameCounter++;

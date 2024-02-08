@@ -1,16 +1,18 @@
 #include <iostream>
 #include <vector>
+#include <variant>
 
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
+#include "objects/headers/PhysicsCircle.hpp"
 #include "objects/headers/PhysicsRect.hpp"
 #include "objects/headers/Circle.hpp"
 #include "objects/headers/Rect.hpp"
 
 int main () {
-    sf::RenderWindow window(sf::VideoMode(800, 800), "SIM AREA", sf::Style::Titlebar | sf::Style::Close);
+    sf::RenderWindow window(sf::VideoMode(800, 800), "Temple of the fallen", sf::Style::Titlebar | sf::Style::Close);
     window.setFramerateLimit(60);
     sf::Event ev;
 

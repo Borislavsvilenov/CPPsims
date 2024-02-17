@@ -28,7 +28,7 @@ void PhysicsCircle::checkCollisions(std::vector<PhysicsCircle> &PCircle, std::ve
     for(int pc = 0; pc < PCircle.size(); pc++) {
         if(PCircle[pc].collision) {
             if(&PCircle[pc] != this) {
-                
+                continue;
             }
         }
     }

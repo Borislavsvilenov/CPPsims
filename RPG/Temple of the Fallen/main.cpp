@@ -16,10 +16,18 @@ int main () {
     window.setFramerateLimit(60);
     sf::Event ev;
 
+    sf::Clock clock;
+    sf::Time dt;
+
     std::vector<Rect> rects;
     std::vector<Circle> circles;
-    std::vector<PhysicsRect> physics1;
-    std::vector<PhysicsCircle> physics;
+    std::vector<PhysicsRect> physicsR;
+    std::vector<PhysicsCircle> physicsC;
+
+    Circle s1 = Circle(100.0f, 100.0f, 10.0f);
+    circles.push_back(s1);
+    PhysicsCircle r1 = PhysicsCircle(s1, true, true, 1, 0.0f, 0.0f, 0.0f, 0.0f);
+    physicsC.push_back(r1);
 
     while(window.isOpen())
     {
@@ -44,7 +52,11 @@ int main () {
 
         window.clear(sf::Color::Black);
 
+        dt = clock.restart();
 
+        for(int i = 0; i < physicsC.size(); i++) {
+            physicsC[i].update(dt.asMilliseconds(), physicsC, physicsR);
+        }
 
         window.display();
     }

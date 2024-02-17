@@ -9,13 +9,13 @@ PhysicsCircle::PhysicsCircle(Circle &father, bool collisionType, bool move, int 
               grav(gravType) {}
 
 
-void PhysicsCircle::update(float dt) {
+void PhysicsCircle::update(float dt, std::vector<PhysicsCircle> &PCircle, std::vector<PhysicsRect> &PRect) {
     if (grav == 1) {
         accel.y += 1000.0f;
     }
 
     if (collision == true) {
-        checkCollisions();
+        checkCollisions(PCircle, PRect);
     }
 
     if (movable == true) {
@@ -24,6 +24,12 @@ void PhysicsCircle::update(float dt) {
     }
 }
 
-void PhysicsCircle::checkCollisions() {
-    
+void PhysicsCircle::checkCollisions(std::vector<PhysicsCircle> &PCircle, std::vector<PhysicsRect> &PRect) {
+    for(int pc = 0; pc < PCircle.size(); pc++) {
+        if(PCircle[pc].collision) {
+            if(&PCircle[pc] != this) {
+                
+            }
+        }
+    }
 }

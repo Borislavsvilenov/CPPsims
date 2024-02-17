@@ -18,6 +18,8 @@ int main () {
 
     std::vector<Rect> rects;
     std::vector<Circle> circles;
+    std::vector<PhysicsRect> physics1;
+    std::vector<PhysicsCircle> physics;
 
     while(window.isOpen())
     {

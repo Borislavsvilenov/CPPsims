@@ -16,6 +16,9 @@ int main () {
     window.setFramerateLimit(60);
     sf::Event ev;
 
+    std::vector<Rect> rects;
+    std::vector<Circle> circles;
+
     while(window.isOpen())
     {
         while (window.pollEvent(ev))

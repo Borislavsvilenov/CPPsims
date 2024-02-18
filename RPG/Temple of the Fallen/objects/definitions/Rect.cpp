@@ -25,9 +25,9 @@ bool Rect::overlapsCircle(Circle &obj) {
 }
 
 void Rect::simpleDraw(sf::RenderWindow &window) {
-    sf::CircleShape draw;
+    sf::RectangleShape draw;
     draw.setPosition(pos.x, pos.y);
-    draw.setRadius(r);
+    draw.setSize(size);
     draw.setFillColor(sf::Color::White);
     window.draw(draw);
 } 

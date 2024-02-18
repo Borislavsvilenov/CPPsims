@@ -1,12 +1,12 @@
 #include "headers/PhysicsCircle.hpp"
 
 PhysicsCircle::PhysicsCircle(Circle *father, bool collisionType, bool move, int gravType, float vx, float vy, float ax, float ay) 
-            : parent(father), 
-              vel(vx, vy), 
-              accel(ax, ay),
-              collision(collisionType),
-              movable(move),
-              grav(gravType) {}
+              : parent(father), 
+                vel(vx, vy), 
+                accel(ax, ay),
+                collision(collisionType),
+                movable(move),
+                grav(gravType) {}
 
 
 void PhysicsCircle::update(float dt, std::vector<PhysicsCircle> &PCircle, std::vector<PhysicsRect> &PRect) {

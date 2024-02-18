@@ -27,7 +27,7 @@ void PhysicsCircle::update(float dt, std::vector<PhysicsCircle> &PCircle, std::v
 void PhysicsCircle::checkCollisions(std::vector<PhysicsCircle> &PCircle, std::vector<PhysicsRect> &PRect) {
     for(int pc = 0; pc < PCircle.size(); pc++) {
         if(PCircle[pc].collision) {
-            if(&PCircle[pc] != this) {
+            if(&(PCircle[pc].parent) != &(this->parent)) {
                 continue;
             }
         }

@@ -24,10 +24,8 @@ int main () {
     std::vector<PhysicsRect> physicsR;
     std::vector<PhysicsCircle> physicsC;
 
-    Circle s1 = Circle(100.0f, 100.0f, 10.0f);
-    circles.push_back(s1);
-    PhysicsCircle r1 = PhysicsCircle(s1, true, true, 1, 0.0f, 0.0f, 0.0f, 0.0f);
-    physicsC.push_back(r1);
+    circles.push_back(Circle(100.0f, 100.0f, 10.0f)); //here
+    physicsC.push_back(PhysicsCircle(circles[0], true, true, 1, 0.0f, 0.0f, 0.0f, 0.0f)); //here
 
     while(window.isOpen())
     {
@@ -54,8 +52,8 @@ int main () {
 
         dt = clock.restart();
 
-        for(int i = 0; i < physicsC.size(); i++) {
-            physicsC[i].update(dt.asMilliseconds(), physicsC, physicsR);
+        for(int i = 0; i < physicsC.size(); i++) { //here
+            physicsC[i].update(dt.asSeconds(), physicsC, physicsR);
         }
 
         window.display();

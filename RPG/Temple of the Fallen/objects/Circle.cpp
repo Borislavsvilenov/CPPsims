@@ -32,4 +32,4 @@ void Circle::simpleDraw(sf::RenderWindow &window) {
     draw.setRadius(r);
     draw.setFillColor(sf::Color::White);
     window.draw(draw);
-}
+} 

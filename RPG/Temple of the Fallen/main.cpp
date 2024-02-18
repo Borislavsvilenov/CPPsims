@@ -24,8 +24,11 @@ int main () {
     std::vector<PhysicsRect> physicsR;
     std::vector<PhysicsCircle> physicsC;
 
-    circles.push_back(Circle(100.0f, 100.0f, 10.0f)); //here
-    physicsC.push_back(PhysicsCircle(&circles[0], true, true, 1, 0.0f, 0.0f, 0.0f, 0.0f)); //here
+    //circles.push_back(Circle(100.0f, 100.0f, 10.0f));
+    //physicsC.push_back(PhysicsCircle(&circles[0], true, true, 1, 0.0f, 0.0f, 0.0f, 0.0f));
+
+    rects.push_back(Rect(100.0f, 100.0f, 10.0f, 10.0f));
+    physicsR.push_back(PhysicsRect(&rects[0], true, true, 1, 0.0f, 0.0f, 0.0f, 0.0f));
 
     while(window.isOpen())
     {

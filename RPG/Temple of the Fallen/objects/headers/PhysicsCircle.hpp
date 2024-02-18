@@ -7,6 +7,8 @@
 #include "Circle.hpp"
 #include "PhysicsRect.hpp"
 
+class PhysicsRect;
+
 class PhysicsCircle {
 private:
     Circle *parent;

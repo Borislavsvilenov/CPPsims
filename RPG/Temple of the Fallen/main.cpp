@@ -25,7 +25,7 @@ int main () {
     std::vector<PhysicsCircle> physicsC;
 
     circles.push_back(Circle(100.0f, 100.0f, 10.0f)); //here
-    physicsC.push_back(PhysicsCircle(circles[0], true, true, 1, 0.0f, 0.0f, 0.0f, 0.0f)); //here
+    physicsC.push_back(PhysicsCircle(&circles[0], true, true, 1, 0.0f, 0.0f, 0.0f, 0.0f)); //here
 
     while(window.isOpen())
     {

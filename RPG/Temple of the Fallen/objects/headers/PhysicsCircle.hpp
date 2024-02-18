@@ -9,7 +9,7 @@
 
 class PhysicsCircle {
 private:
-    Circle &parent;
+    Circle *parent;
     sf::Vector2f vel;
     sf::Vector2f accel;
 
@@ -18,7 +18,7 @@ private:
     int grav;
 
 public:
-    PhysicsCircle(Circle &father, bool collisionType, bool move, int gravType, float vx, float vy, float ax, float ay);
+    PhysicsCircle(Circle *father, bool collisionType, bool move, int gravType, float vx, float vy, float ax, float ay);
     void update(float dt, std::vector<PhysicsCircle> &PCircle, std::vector<PhysicsRect> &PRect);
     void checkCollisions(std::vector<PhysicsCircle> &PCircle, std::vector<PhysicsRect> &PRect);
 };

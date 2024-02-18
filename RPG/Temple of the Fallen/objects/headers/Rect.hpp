@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
+#include <SFML/System.hpp>
 #include "Circle.hpp"
 
 class Circle;
@@ -15,5 +15,4 @@ public:
     void moveTo(sf::Vector2f Apos);
     bool overlapsRect(Rect &obj);
     bool overlapsCircle(Circle &obj);
-    void simpleDraw(sf::RenderWindow &window);
 };

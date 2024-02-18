@@ -23,3 +23,11 @@ bool Rect::overlapsCircle(Circle &obj) {
 
     return (dx * dx + dy * dy) <= (obj.r * obj.r);
 }
+
+void Rect::simpleDraw(sf::RenderWindow &window) {
+    sf::CircleShape draw;
+    draw.setPosition(pos.x, pos.y);
+    draw.setRadius(r);
+    draw.setFillColor(sf::Color::White);
+    window.draw(draw);
+} 

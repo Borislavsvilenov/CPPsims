@@ -15,4 +15,5 @@ public:
     void moveTo(sf::Vector2f Apos);
     bool overlapsRect(Rect &obj);
     bool overlapsCircle(Circle &obj);
+    void simpleDraw(sf::RenderWindow &window);
 };

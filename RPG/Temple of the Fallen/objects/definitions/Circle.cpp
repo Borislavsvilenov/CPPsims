@@ -1,4 +1,4 @@
-#include "headers/Circle.hpp"
+#include "../Circle.hpp"
 
 Circle::Circle(float x, float y, float rad) 
        : pos(x, y), 

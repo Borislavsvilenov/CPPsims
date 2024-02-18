@@ -1,4 +1,4 @@
-#include "headers/PhysicsCircle.hpp"
+#include "../PhysicsCircle.hpp"
 
 PhysicsCircle::PhysicsCircle(Circle *father, bool collisionType, bool move, int gravType, float vx, float vy, float ax, float ay) 
               : parent(father), 

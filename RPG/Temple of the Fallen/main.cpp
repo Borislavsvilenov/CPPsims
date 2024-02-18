@@ -6,10 +6,10 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
-#include "objects/headers/PhysicsCircle.hpp"
-#include "objects/headers/PhysicsRect.hpp"
-#include "objects/headers/Circle.hpp"
-#include "objects/headers/Rect.hpp"
+#include "objects/PhysicsCircle.hpp"
+#include "objects/PhysicsRect.hpp"
+#include "objects/Circle.hpp"
+#include "objects/Rect.hpp"
 
 int main () {
     sf::RenderWindow window(sf::VideoMode(800, 800), "Temple of the fallen", sf::Style::Titlebar | sf::Style::Close);

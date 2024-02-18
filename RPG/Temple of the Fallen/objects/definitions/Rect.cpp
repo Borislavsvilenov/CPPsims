@@ -1,4 +1,4 @@
-#include "Rect.hpp"
+#include "../Rect.hpp"
 
 Rect::Rect(float x, float y, float w, float h)
      : pos(x, y), 

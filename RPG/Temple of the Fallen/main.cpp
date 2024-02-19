@@ -55,9 +55,9 @@ int main () {
 
         dt = clock.restart();
 
-        //for(int i = 0; i < physicsC.size(); i++) { //here
-        //    physicsC[i].update(dt.asSeconds(), physicsC, physicsR);
-        //}
+        for(int i = 0; i < physicsC.size(); i++) { //here
+            physicsC[i].update(dt.asSeconds(), physicsC, physicsR);
+        }
 
         window.display();
     }

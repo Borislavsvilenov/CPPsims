@@ -1,4 +1,4 @@
-#include "../PhysicsRect.hpp"
+#include "PhysicsRect.hpp"
 
 
 PhysicsRect::PhysicsRect(Rect *father, bool collisionType, bool move, int gravType, float vx, float vy, float ax, float ay) 

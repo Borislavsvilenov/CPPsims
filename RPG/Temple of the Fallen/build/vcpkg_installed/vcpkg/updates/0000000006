@@ -1,8 +1,0 @@
-Package: libflac
-Version: 1.4.3
-Depends: libogg, vcpkg-cmake, vcpkg-cmake-config
-Architecture: arm64-osx
-Multi-Arch: same
-Abi: a547147291d46de7ca780d5a9cbe129248609e6d179fb443c48b4981219a91e6
-Description: Library for manipulating FLAC files
-Status: install ok half-installed

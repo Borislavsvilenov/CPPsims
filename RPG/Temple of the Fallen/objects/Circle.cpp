@@ -27,9 +27,9 @@ bool Circle::overlapsCircle(Circle &obj) {
 }
 
 void Circle::simpleDraw(sf::RenderWindow &window) {
-    sf::CircleShape draw;
-    draw.setPosition(pos.x, pos.y);
-    draw.setRadius(r);
-    draw.setFillColor(sf::Color::White);
-    window.draw(draw);
+    sf::CircleShape sprite;
+    sprite.setPosition(pos.x, pos.y);
+    sprite.setRadius(r);
+    sprite.setFillColor(sf::Color::White);
+    window.draw(sprite);
 } 

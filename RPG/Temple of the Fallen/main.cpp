@@ -55,10 +55,10 @@ int main () {
 
         dt = clock.restart();
 
-        for(int i = 0; i < physicsC.size(); i++) { //here
+        for(int i = 0; i < physicsC.size(); i++) {
             physicsC[i].update(dt.asSeconds(), physicsC, physicsR);
         }
-        for(int i = 0; i < physicsR.size(); i++) { //here
+        for(int i = 0; i < physicsR.size(); i++) {
             physicsR[i].update(dt.asSeconds(), physicsC, physicsR);
         }
         for(int i = 0; i < circles.size(); i++) {

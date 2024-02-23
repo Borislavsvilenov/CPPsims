@@ -59,7 +59,7 @@ int main () {
             physicsC[i].update(dt.asSeconds(), physicsC, physicsR);
         }
         for(int i = 0; i < circles.size(); i++) {
-          circles[i].simpleDraw(window); 
+          circles[i].simpleDraw(window);
         }
         for(int i = 0; i < rects.size(); i++) {
           rects[i].simpleDraw(window);

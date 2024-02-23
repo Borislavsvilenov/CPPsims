@@ -9,9 +9,9 @@ PhysicsRect::PhysicsRect(Rect *father, bool collisionType, bool move, int gravTy
               movable(move),
               grav(gravType) {}
 
-void PhysicsRect::update(float dt) {
+void PhysicsRect::update(float dt, std::vector<PhysicsCircle> &PCircle, std::vector<PhysicsRect> &PRect) {
     if (grav == 1) {
-        accel.y += 1000.0f;
+        accel.y += 10.0f;
     }
 
     if (collision == true) {

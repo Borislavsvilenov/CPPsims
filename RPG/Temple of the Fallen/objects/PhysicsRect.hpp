@@ -21,5 +21,5 @@ private:
 
 public:
     PhysicsRect(Rect *father, bool collisionType, bool move, int gravType, float vx, float vy, float ax, float ay);
-    void update(float dt);
+    void update(float dt, std::vector<PhysicsCircle> &PCircle, std::vector<PhysicsRect> &PRect);
 };

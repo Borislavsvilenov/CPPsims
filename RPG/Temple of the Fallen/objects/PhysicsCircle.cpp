@@ -11,7 +11,7 @@ PhysicsCircle::PhysicsCircle(Circle *father, bool collisionType, bool move, int 
 
 void PhysicsCircle::update(float dt, std::vector<PhysicsCircle> &PCircle, std::vector<PhysicsRect> &PRect) {
     if (grav == 1) {
-        accel.y += 1000.0f;
+        accel.y += 10.0f;
     }
 
     if (collision == true) {

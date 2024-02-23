@@ -24,10 +24,10 @@ int main () {
     std::vector<PhysicsRect> physicsR;
     std::vector<PhysicsCircle> physicsC;
 
-    circles.push_back(Circle(100.0f, 100.0f, 10.0f));
+    circles.push_back(Circle(100.0f, 100.0f, 50.0f));
     physicsC.push_back(PhysicsCircle(&circles[0], true, true, 1, 0.0f, 0.0f, 0.0f, 0.0f));
 
-    rects.push_back(Rect(200.0f, 200.0f, 10.0f, 10.0f));
+    rects.push_back(Rect(200.0f, 200.0f, 50.0f, 50.0f));
     physicsR.push_back(PhysicsRect(&rects[0], true, true, 1, 0.0f, 0.0f, 0.0f, 0.0f));
 
     while(window.isOpen())
@@ -57,6 +57,9 @@ int main () {
 
         for(int i = 0; i < physicsC.size(); i++) { //here
             physicsC[i].update(dt.asSeconds(), physicsC, physicsR);
+        }
+        for(int i = 0; i < physicsR.size(); i++) { //here
+            physicsR[i].update(dt.asSeconds(), physicsC, physicsR);
         }
         for(int i = 0; i < circles.size(); i++) {
           circles[i].simpleDraw(window);

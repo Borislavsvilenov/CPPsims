@@ -31,7 +31,8 @@ void PhysicsCircle::checkCollisions(std::vector<PhysicsCircle> &PCircle, std::ve
         sf::Vector2f to_obj = PCircle[pc].parent->pos - this->parent->pos;
         float d = std::sqrt(to_obj.x * to_obj.x + to_obj.y * to_obj.y);
         if(d < PCircle[pc].parent->r + this->parent->r) {
-          continue;
+          to_obj /= d;
+          
         }
       }
     }

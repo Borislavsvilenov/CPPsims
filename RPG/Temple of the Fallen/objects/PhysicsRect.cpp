@@ -11,7 +11,7 @@ PhysicsRect::PhysicsRect(Rect *father, bool collisionType, bool move, int gravTy
 
 void PhysicsRect::update(float dt, std::vector<PhysicsCircle> &PCircle, std::vector<PhysicsRect> &PRect) {
     if (grav == 1) {
-        accel.y += 10.0f;
+        accel.y += 500.0f;
     }
 
     if (collision == true) {
@@ -21,5 +21,7 @@ void PhysicsRect::update(float dt, std::vector<PhysicsCircle> &PCircle, std::vec
     if (movable == true) {
         vel += accel * dt;
         parent->pos += vel * dt;
+        accel.x = 0.0f;
+        accel.y = 0.0f;
     }
 }
